@@ -10,6 +10,8 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static com.example.thymeleaf.entity.util.SensitiveDataUtil.mask;
+
 @Getter
 @Setter
 @Entity
@@ -50,8 +52,8 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
+                ", name='" + mask(name) + '\'' +
+                ", email='" + mask(email) + '\'' +
                 ", birthday=" + birthday +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
