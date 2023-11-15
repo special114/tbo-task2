@@ -10,6 +10,8 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static com.example.thymeleaf.entity.util.SensitiveDataUtil.mask;
+
 @Getter
 @Setter
 @Entity
@@ -57,13 +59,13 @@ public class Address {
     public String toString() {
         return "Address{" +
                 "id='" + id + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                ", street='" + street + '\'' +
-                ", number='" + number + '\'' +
+                ", zipCode='" + mask(zipCode) + '\'' +
+                ", street='" + mask(street) + '\'' +
+                ", number='" + mask(number) + '\'' +
                 ", complement='" + complement + '\'' +
-                ", district='" + district + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
+                ", district='" + mask(district) + '\'' +
+                ", city='" + mask(city) + '\'' +
+                ", state='" + mask(state) + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';
